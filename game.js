@@ -6,7 +6,7 @@ const UI = {
   handText: document.getElementById("handText"),
   scoreText: document.getElementById("scoreText"),
   timeText: document.getElementById("timeText"),
-};
+}; 
 
 const W = canvas.width, H = canvas.height;
 
