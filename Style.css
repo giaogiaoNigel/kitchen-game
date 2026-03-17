@@ -1,48 +1,65 @@
 :root{
-  --bg:#1b1e23;
-  --panel:#111318;
+  --bg:#0f1116;
+  --panel:#111318cc;
+  --border:#2a2f39;
   --text:#e8e8e8;
   --muted:#b9c0cc;
 }
 
 *{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Arial, "PingFang SC","Microsoft YaHei", sans-serif;
-}
+html,body{height:100%; margin:0; background:var(--bg); color:var(--text); overflow:hidden;}
+body{font-family: system-ui, -apple-system, "Segoe UI", Arial, "PingFang SC","Microsoft YaHei", sans-serif;}
 
-.wrap{
-  max-width: 980px;
-  margin: 18px auto;
-  padding: 0 12px;
-}
+#game{
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  display:block;
+  background:#0b0c10;
 
-.hud{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  background:var(--panel);
-  border:1px solid #2a2f39;
-  padding:10px 12px;
-  border-radius:10px;
-  margin-bottom:12px;
-  line-height:1.6;
-}
-
-.tips{
-  margin-top:10px;
-  color:var(--muted);
-  font-size:14px;
-}
-
-canvas{
-  width:100%;
-  height:auto;
+  /* keep pixel art crisp */
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  border-radius:14px;
-  border:1px solid #2a2f39;
-  background:#0f1116;
+}
+
+#ui{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+
+.topbar, .bottombar{
+  position:absolute;
+  left:12px; right:12px;
+  display:flex;
+  gap:12px;
+  pointer-events:none;
+}
+.topbar{top:12px; justify-content:space-between; align-items:flex-start;}
+.bottombar{bottom:12px; justify-content:center;}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 12px;
+  line-height:1.55;
+  backdrop-filter: blur(6px);
+}
+
+.panel.right{min-width:260px}
+.panel.tips{font-size:14px; color:var(--muted)}
+
+#minimap{
+  position:absolute;
+  right:12px;
+  bottom:70px;
+  width:200px;
+  height:120px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#0f1219cc;
+  image-rendering: pixelated;
+  pointer-events:none;
 }
