@@ -2,29 +2,36 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>像素厨房（网页小游戏原型）</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>像素厨房农场 V2</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <header class="hud">
-      <div class="left">
+  <div id="ui">
+    <div class="topbar">
+      <div class="panel">
         <div><b>订单</b>：<span id="orderText">-</span></div>
         <div><b>手上</b>：<span id="handText">空</span></div>
+        <div><b>背包</b>：<span id="invText">-</span></div>
       </div>
-      <div class="right">
-        <div><b>分数</b>：<span id="scoreText">0</span></div>
-        <div><b>时间</b>：<span id="timeText">120</span>s</div>
+      <div class="panel right">
+        <div><b>金币</b>：<span id="goldText">0</span></div>
+        <div><b>声誉</b>：<span id="repText">0</span></div>
+        <div><b>时间</b>：<span id="timeText">Day 1 06:00</span></div>
       </div>
-    </header>
+    </div>
 
-    <canvas id="c" width="640" height="360"></canvas>
+    <div class="bottombar">
+      <div class="panel tips">
+        移动：WASD/方向键　交互：E　工具/使用：Space　切换快捷栏：1-5　
+        丢弃：Q　冲刺：Shift　全屏：F
+      </div>
+    </div>
 
-    <footer class="tips">
-      移动：WASD/方向键　交互：E　丢弃：Q　冲刺：Shift（消耗少量时间）
-    </footer>
+    <canvas id="minimap" width="200" height="120"></canvas>
   </div>
+
+  <canvas id="game"></canvas>
 
   <script src="game.js"></script>
 </body>
